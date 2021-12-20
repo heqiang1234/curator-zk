@@ -2,6 +2,8 @@ import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.*;
+import org.apache.curator.framework.recipes.locks.InterProcessMutex;
+import org.apache.curator.framework.recipes.locks.InterProcessSemaphoreMutex;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
@@ -131,6 +133,9 @@ public class cutatorTest {
                 System.out.println(treeCacheEvent);
             }
         });
+
+        //InterProcessSemaphoreMutex
+//        InterProcessMutex
 
         //开启
         treeCache.start();
